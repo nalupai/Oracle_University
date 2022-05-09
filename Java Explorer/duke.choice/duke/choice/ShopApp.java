@@ -4,8 +4,7 @@ class ShopApp {
     
     public static void main(String[] args) {
 
-        double tax = 0.2;
-        double total;
+        double tax = 0.2, total = 0.0;
 
         System.out.println("Welcome to Duke Choice Shop");
 
@@ -20,6 +19,7 @@ class ShopApp {
 
         item1.description = "Blue Jacket";
         item1.price = 20.9;
+        item1.size = "M";
 
         item2.description = "Orange T-Shirt";
         item2.price = 10.5;
@@ -28,7 +28,7 @@ class ShopApp {
         System.out.println(item1.description + ", " + item1.price + ", " + item1.size);
         System.out.println(item2.description + ", " + item2.price + ", " + item2.size);
 
-        total = (2 * item2.price + item1.price) + (2 * item2.price + item1.price) * tax;
-        System.out.println(total);
+        total = (item1.price + item2.price * 2) * (1 + tax);
+        System.out.println("Total = " + total);
     }
 }
