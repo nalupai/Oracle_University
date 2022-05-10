@@ -28,10 +28,15 @@ class ShopApp {
         item2.price = 10.5;
         item2.size = "S";
 
-        System.out.println(item1.description + ", " + item1.price + ", " + item1.size);
-        System.out.println(item2.description + ", " + item2.price + ", " + item2.size);
+        for (Clothing item : items) {
+            System.out.println(item.description + ", " + item.price + ", " + item.size);
+            total = total + item.price * (1 + tax);
+        }
 
-        total = (item1.price + item2.price * 2) * (1 + tax);
+        //System.out.println(item1.description + ", " + item1.price + ", " + item1.size);
+        //System.out.println(item2.description + ", " + item2.price + ", " + item2.size);
+
+        //total = (item1.price + item2.price * 2) * (1 + tax);
         System.out.println("Total = " + total);
 
         int measurement = 3;
