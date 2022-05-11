@@ -4,7 +4,6 @@ class ShopApp {
     
     public static void main(String[] args) {
 
-        //double tax = 0.2;
         double total = 0.0;
 
         System.out.println("Welcome to Duke Choice Shop");
@@ -13,6 +12,10 @@ class ShopApp {
 
         c1.setName("Pinky");
         c1.setSize("S");
+
+        int measurement = 3;
+
+        c1.setSize(measurement);
 
         System.out.println("Customer is " + c1.getName());
 
@@ -50,21 +53,5 @@ class ShopApp {
         }
 
         System.out.println("Total = " + total);
-
-        int measurement = 3;
-
-        switch (measurement) {
-            case 1: case 2: case 3:
-                c1.setSize("S");
-                break;
-            case 4: case 5: case 6:
-                c1.setSize("M");
-                break;
-            case 7: case 8: case 9:
-                c1.setSize("L");
-                break;
-            default:
-                c1.setSize("X");
-        }
     }
 }
