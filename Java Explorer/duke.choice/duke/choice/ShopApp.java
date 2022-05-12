@@ -4,8 +4,6 @@ class ShopApp {
     
     public static void main(String[] args) {
 
-        double total = 0.0;
-
         System.out.println("Welcome to Duke Choice Shop");
 
         Customer c1 = new Customer();
@@ -40,18 +38,12 @@ class ShopApp {
         items[3].setPrice(10.5);
         items[3].setSize("S");
 
+        c1.addItems(items);
+
         for (Clothing item : items) {
-
-            if (item.getSize().equals(c1.getSize())) {
-                System.out.println(item.getDescription() + ", " + item.getPrice() + ", " + item.getSize());
-                total = total + item.getPrice();
-            }
-
-            if (total > 15) {
-                break;
-            }
+            System.out.println(item.getDescription() + ", " + item.getPrice() + ", " + item.getSize());
         }
-
-        System.out.println("Total = " + total);
+        
+        System.out.println("Total = " + c1.getTotalClothingCost(items));
     }
 }
