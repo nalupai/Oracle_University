@@ -2,7 +2,15 @@ package duke.choice;
 
 class Customer {
 
+    private String name;
+    private String size;
+
     private Clothing[] items;
+
+    public Customer(String name, int measurement) {
+        this.name = name;
+        setSize(measurement);
+    }
 
     public void addItems(Clothing[] items) {
         this.items = items;
@@ -19,9 +27,6 @@ class Customer {
         }
         return total;
     }
-
-    private String name;
-    private String size;
 
     public String getName() {
         return name;
