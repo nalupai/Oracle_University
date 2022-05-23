@@ -24,5 +24,24 @@ class ShopApp {
         }
         
         System.out.println("Total = " + c1.getTotalClothingCost(items));
+
+        double sum = 0;
+        double average = 0;
+        int counter = 0;
+
+        for (Clothing item : c1.getItems()) {
+            if (item.getSize().equals("L")) {
+                sum = sum + item.getPrice();
+                counter++;
+            }
+        }
+
+        try {
+            average = sum / counter;
+            double zeroCheck = 0 / (int)average;
+            System.out.println("average price = " + average);
+        } catch (ArithmeticException e) {
+            System.out.println("calling an exception");
+        }
     }
 }
