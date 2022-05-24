@@ -1,6 +1,6 @@
 package duke.choice;
 
-class Clothing {
+class Clothing implements Comparable<Clothing> {
 
     private String description;
     private double price;
@@ -46,5 +46,11 @@ class Clothing {
     @Override
     public String toString() {
         return getDescription() + ", " + getPrice() + ", " + getSize();
+    }
+
+    @Override
+    public int compareTo(Clothing cloth) {
+        // TODO Auto-generated method stub
+        return this.description.compareTo(cloth.description);
     }
 }
